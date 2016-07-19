@@ -1,0 +1,25 @@
+<project name="Datafu sonar" default="all" basedir="." xmlns:sonar="antlib:org.sonar.ant">
+  
+<import file="${basedir}/build.xml"/>
+<!-- Define the SonarQube global properties (the most usual way is to pass these properties via the command line) -->
+<property name="sonar.jdbc.url" value="jdbc:mysql://172.22.73.136:3306/sonar?useUnicode=true&amp;characterEncoding=utf8" />
+<property name="sonar.jdbc.username" value="sonar" />
+<property name="sonar.jdbc.password" value="sonar" />
+ 
+<!-- Define the SonarQube project properties -->
+<property name="sonar.projectKey" value="org.apache.datafu:datafu" />
+<property name="sonar.projectName" value="Apache Datafu" />
+<property name="sonar.projectVersion" value="1.0" />
+<property name="sonar.language" value="java" />
+<property name="sonar.sources" value="src" />
+<property name="sonar.binaries" value="${basedir}/dist/" />
+<property name="sonar.host.url" value="http://172.22.73.136:9000"/>
+ 
+<!-- Define the SonarQube target -->
+<target name="sonar">
+    <taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml"/>
+ 
+    <!-- Execute the SonarQube analysis -->
+    <sonar:sonar />
+</target>
+</project>
