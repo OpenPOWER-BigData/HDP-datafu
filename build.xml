@@ -225,6 +225,7 @@
     <fileset dir="${tools.lib.dir}">
       <include name="*.jar" />
     </fileset>
+    <fileset id="fs" dir="${packaged.lib.dir}" includes="${guava.jar}"/>
     <pathelement path="${pigtestclasses.dir}" />
   </path>
 
